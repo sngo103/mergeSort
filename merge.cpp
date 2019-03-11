@@ -67,8 +67,33 @@ vector<int> mergeSort(vector<int> arr){
   return retArr;
 }
 
-// Given an ordered array of ints and a target, return the index of the target or -1 if not found:
+// *NOT WORKING
+// Given an ordered vector of ints and a target, return the index of the target or -1 if not found:
 int binarySearch(int target, vector<int> dataset){
+  int upperBound = dataset.size();
+  int lowerBound = 0;
+  int middle = dataset.size()/2;
+  int range = dataset.size();
 
-  return 0;
+  while(upperBound != lowerBound){
+    cout << "U: " << upperBound << endl;
+    cout << "L: " << lowerBound << endl;
+    cout << "M: " << middle << endl;
+    cout << "R: " << range << endl;
+    cout << "========================================" << endl;
+    if(target >= dataset[middle]){
+      lowerBound = middle;
+      range = range/2;
+      middle = lowerBound + range;
+    } else {
+      upperBound = middle;
+      range = range/2;
+      middle = lowerBound + range;
+    }
+  }
+  if(dataset[lowerBound] != target){
+    return -1;
+  } else {
+    return lowerBound;
+  }
 }

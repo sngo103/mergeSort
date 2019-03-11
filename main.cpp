@@ -28,6 +28,17 @@ int main(){
     cout << newArr[i] << " | ";
   }
   cout << endl;
+  cout << "Binary Search........................." << endl;
+  vector<int> binaryArr;
+  for(int i = 0; i < 10; i += 3){
+    binaryArr.push_back(i);
+  }
+  cout << "Binary Search Array: ";
+  for(int i = 0; i < binaryArr.size(); i++){
+    cout << binaryArr[i] << " | ";
+  }
+  cout << endl;
+  cout << binarySearch(9, binaryArr) << endl;
   
   return 0;
 }
